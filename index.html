@@ -31,7 +31,7 @@
         <div class="intro-art-wrap"><img id="death-god" class="death-god" src="assets/shinigami.png" alt="死神のシルエット"></div>
         <div class="title-line" hidden></div>
         <p class="intro-text" id="intro-line" hidden>この物語はフィクション。</p>
-        <button id="start-button" type="button">次へ →</button>
+        <button id="start-button" type="button">スタート</button>
       </section>
 
       <!-- 質問画面 -->
@@ -93,6 +93,15 @@
           </div>
         </div>
       </section>
+
+      <!-- 思い出す（選択履歴見返し）モーダル -->
+      <div id="history-modal" class="history-modal" hidden>
+        <div class="history-modal-content">
+          <h2 class="history-title">【 あなたが歩んだ選択 】</h2>
+          <ul id="modal-choice-history-list" class="choice-history-list"></ul>
+          <button id="history-modal-close" type="button" class="next-step-button modal-close-btn">閉じる</button>
+        </div>
+      </div>
     </main>
   </div>
 
