@@ -8,14 +8,14 @@ const LOW = -4;
 
 const questions = [
   {
-    id: "Q1", stage: "乳児期（0〜3歳）", title: "01 / 09",
+    id: "Q1", stage: "乳児期", title: "01 / 09",
     story: "あなたは生まれた。\nこの現代に。\n\nまだ、生まれて3年も経っていない。目の前には、いくつかのおもちゃが置かれている。音を鳴らすもの、柔らかなもの、不思議な動きをするもの。専門的には、あなたを見守る母親がいる。",
     prompt: "あなたが最初に手を伸ばしたのは、どれだろう。",
     choices: [
       { text: "ガラガラ", scores: {O:0,C:0,E:2,A:1,N:-1} },
       { text: "クマのぬいぐるみ", scores: {O:2,C:1,E:-1,A:1,N:-1} },
       { text: "オルゴール", scores: {O:2,C:1,E:0,A:0,N:0} },
-      { text: "赤ちゃんの頃使用していたブランケット", scores: {O:-1,C:0,E:-1,A:2,N:1} }
+      { text: "赤ちゃんの頃に使用していたブランケット", scores: {O:-1,C:0,E:-1,A:2,N:1} }
     ]
   },
   {
@@ -74,18 +74,18 @@ const questions = [
     ]
   },
   {
-    id: "Q7A", route: "plus", stage: "成人初期 — ＋ルート", title: "07 / 09",
+    id: "Q7A", route: "plus", stage: "成人初期 — ルートA", title: "07 / 09",
     story: "時が進み、あなたは成人式を終えた。\n\n久しぶりに学生時代の友人と会うことになった。話を聞くと、友人は結婚していて、もうすぐ子どもも生まれるらしい。\n\n友人の話を聞きながら、あなたは自分のこれからについて考える。\n\n結婚して、子どもを持つこと。",
     prompt: "あなたは、どうしたいだろう。",
     choices: [
-      { text: "自分も結婚して子供産みたい", scores: {O:0,C:1,E:1,A:2,N:-1} },
+      { text: "自分も結婚して子供を産みたい", scores: {O:0,C:1,E:1,A:2,N:-1} },
       { text: "相手に任せる", scores: {O:0,C:1,E:0,A:2,N:0} },
       { text: "全然いらない", scores: {O:1,C:0,E:-1,A:0,N:0} },
       { text: "今の自分は関係ない", scores: {O:1,C:-1,E:0,A:0,N:0} }
     ]
   },
   {
-    id: "Q8A", route: "plus", stage: "壮年期 — ＋ルート", title: "08 / 09",
+    id: "Q8A", route: "plus", stage: "壮年期 — ルートA", title: "08 / 09",
     story: "着実に日々が過ぎていく。\n\nあなたは50代になった。職場では、若い人たちを見守る立場になっている。\n\nある日、昔の自分によく似た若者に出会った。何かに困っているようだが、本人から相談されたわけではない。",
     prompt: "その姿を見て、あなたはどうするだろう。",
     choices: [
@@ -96,7 +96,7 @@ const questions = [
     ]
   },
   {
-    id: "Q9A", route: "plus", stage: "老年期 — ＋ルート", title: "09 / 09",
+    id: "Q9A", route: "plus", stage: "老年期 — ルートA", title: "09 / 09",
     story: "あなたは65歳になり、定年退職した。\n\n仕事をしていた頃よりも、自由に使える時間が増えた。これまで忙しくてできなかったことにも、挑戦できるかもしれない。",
     prompt: "これからの時間を、あなたはどう過ごすだろう。",
     choices: [
@@ -107,7 +107,7 @@ const questions = [
     ]
   },
   {
-    id: "Q7B", route: "minus", stage: "成人初期 — −ルート", title: "07 / 09",
+    id: "Q7B", route: "minus", stage: "成人初期 — ルートB", title: "07 / 09",
     story: "時が進み、あなたは成人式を終えた。\n\n久しぶりに学生時代の友人と会うことになった。友人は今の仕事に不満があるらしい。話を聞いているうちに、自分にとって仕事とは何なのか、ふと考える。",
     prompt: "あなたは、仕事に何を求めるだろう。",
     choices: [
@@ -118,7 +118,7 @@ const questions = [
     ]
   },
   {
-    id: "Q8B", route: "minus", stage: "壮年期 — −ルート", title: "08 / 09",
+    id: "Q8B", route: "minus", stage: "壮年期 — ルートB", title: "08 / 09",
     story: "着実に日々が過ぎていく。\n\nあなたは50代になった。ある日、昔の友人と久しぶりに会った。友人は新しいことを始め、以前とは違う生活を送っているらしい。\n\nそれに比べて、自分の生活は、あの頃から大きく変わっていない。",
     prompt: "友人の話を聞きながら、あなたは何を思うだろう。",
     choices: [
@@ -129,7 +129,7 @@ const questions = [
     ]
   },
   {
-    id: "Q9B", route: "minus", stage: "老年期 — −ルート", title: "09 / 09",
+    id: "Q9B", route: "minus", stage: "老年期 — ルートB", title: "09 / 09",
     story: "あなたは歳を重ね、定年退職した。\n\n荷物の整理を兼ねて部屋を掃除していると、古いアルバムが出てきた。写真の中には、若い頃の自分がいる。\n\n懐かしい思い出がよみがえる。その一方で、ふと考えてしまう。\n\nもし、あのとき別の道を選んでいたらし。",
     prompt: "あなたは、その思いにどのように向き合うだろう。",
     choices: [
@@ -406,6 +406,7 @@ const endingSeqScreen = $("ending-sequence-screen");
 const bgm = $("bgm");
 const bgm2 = $("bgm2");
 const bgm3 = $("bgm3");
+const bgm4 = $("bgm4");
 const narration = $("narration");
 const deathGod = $("death-god");
 let introIndex = 0;
@@ -438,6 +439,7 @@ function startEndingBgm(endingName) {
   stopBgm();
   if (bgm2) bgm2.pause();
   if (bgm3) bgm3.pause();
+  if (bgm4) bgm4.pause();
 
   if (endingName === "人脈の人" || endingName === "家族の人") {
     if (bgm2) {
@@ -450,6 +452,12 @@ function startEndingBgm(endingName) {
       bgm3.currentTime = 0;
       bgm3.volume = 0.25;
       bgm3.play().catch(() => {});
+    }
+  } else if (endingName === "伝説の人" || endingName === "孤独の人" || endingName === "孤独な人" || endingName === "完璧主義者" || endingName === "挑戦者") {
+    if (bgm4) {
+      bgm4.currentTime = 0;
+      bgm4.volume = 0.25;
+      bgm4.play().catch(() => {});
     }
   }
 }
@@ -537,7 +545,7 @@ function getFuneralSequence(ending) {
   const q3Idx = getChoiceIndex("Q3");
   const q4Idx = getChoiceIndex("Q4");
   const q4Text = getChoiceText("Q4", "教室の真ん中");
-  const q7AText = getChoiceText("Q7A", "自分も結婚して子供産みたい");
+  const q7AText = getChoiceText("Q7A", "自分も結婚して子供を産みたい");
 
   let memorySteps = [];
 
@@ -556,7 +564,7 @@ function getFuneralSequence(ending) {
         { text: q2Lines[0], reset: false },
         { text: q2Lines[1], reset: false },
         { text: "「ふふ、懐かしいね」", reset: false },
-        { text: "懐かしむよう声に、小さな笑いが混じる。", reset: false }
+        { text: "懐かしむような声に、小さな笑いが混じる。", reset: false }
       ];
       break;
     }
@@ -612,7 +620,7 @@ function getFuneralSequence(ending) {
         { text: "「私は旅先で出会ったきりだけど、楽しそうな人だったよ。また、どこかで出会えると思ったんだけどな......」", reset: false },
         { text: "その隣では、別の参列者が思い出話をしていた。", reset: false },
         ...talk.map(line => ({ text: line, reset: false })),
-        { text: "同じ人を知っているはずだが、語られる姿を少しずつ違う\nそれでも、懐かしむ声があなたを語る。", reset: false }
+        { text: "同じ人を知っているはずだが、語られる姿は少しずつ違う\nそれでも、懐かしむ声があなたを語る。", reset: false }
       ];
       break;
     }
@@ -622,12 +630,12 @@ function getFuneralSequence(ending) {
         [
           "「あの人、昔から一人でいる子を放っておけない人だったね」",
           "「みんなと友達、みたいなタイプじゃないけど、誰かが困っていたら面倒見てくれたよね」",
-          "「そうそう、頼まれたわけでもないのに」",
+          "「そうそう、頼まれたわけでないのに」",
           "「でもそのおかげで私達も知り合ったからね」"
         ],
         [
           "「あの人、遊ぶ時も真剣だったね」",
-          "「しかも、勝利にめっちゃ貪欲でさ。買ったら本当に嬉しそうだけど、負けたら、ほんとに悔しがってて」",
+          "「しかも、勝利にめっちゃ貪欲でさ。勝ったら本当に嬉しそうだけど、負けたら、ほんとに悔しがってて」",
           "「どうやったらいいか次の勝利のために考えてたりしてて、そこまでする必要ある？とか思ってた」",
           "「でもまぁ、だからこそあの人と遊ぶのは楽しかったな」"
         ],
@@ -658,11 +666,11 @@ function getFuneralSequence(ending) {
       memorySteps = [
         { text: `棺桶に入れられた ${q1Text} を見ながら友人たちが口を開く。`, reset: true, action: "clearBg" },
         { text: "「......覚えてる？中学生のころの席替え」", reset: false },
-        { text: "「まあ、おぼえているけど？」", reset: false },
+        { text: "「まあ、覚えているけど？」", reset: false },
         { text: `「この人さ、席替えの日『${q4Text}』が良いって言ってたのに、実際は ${q4SeatResult} になってさ。あの時のフラグ回収早かったな〜...」`, reset: false },
         { text: "「でも、全然落ち込まず、むしろ新しい席でワクワクして喜んでたね」", reset: false },
         { text: "その隣では、別の参列者が思い出話をしていた。", reset: false },
-        { text: "懐かしむよう声に、小さな笑いが混じる。", reset: false }
+        { text: "懐かしむような声に、小さな笑いが混じる。", reset: false }
       ];
       break;
     }
@@ -672,12 +680,12 @@ function getFuneralSequence(ending) {
         { text: "古くからの友人が口を開く", reset: true, action: "clearBg" },
         { text: "「......覚えてる？席替えの日にみんなでどこの席がいいか話してたの」", reset: false },
         { text: "「そんなこともあったっけ」", reset: false },
-        { text: `「あった、あった。確か青年期の選択肢『${q4Text}』が良いっていってなかったっけ」`, reset: false },
+        { text: `「あった、あった。確か青年期の選択肢『${q4Text}』が良いって言ってなかったっけ」`, reset: false },
         { text: "「そうそう、あんまり関わりを必要とする人って感じじゃなくてさ」", reset: false },
         { text: "「そんな話をしてたら、みんなで真ん前になってね」", reset: false },
-        { text: "「あの時の心底嫌そうな顔面白かったな~......」", reset: false },
+        { text: "「あの時の心底嫌そうな顔が面白かったな~......」", reset: false },
         { text: "その隣では、別の参列者が思い出話をしていた。", reset: false },
-        { text: "懐かしむよう声に、小さな笑いが混じる。", reset: false }
+        { text: "懐かしむような声に、小さな笑いが混じる。", reset: false }
       ];
       break;
     }
@@ -687,12 +695,12 @@ function getFuneralSequence(ending) {
         { text: "古くからの友人が口を開く", reset: true, action: "clearBg" },
         { text: "「......覚えてる？席替えの日にみんなでどこの席がいいか話してたの」", reset: false },
         { text: "「そんなこともあったっけ」", reset: false },
-        { text: `「あった、あった。確か青年期の選択肢『${q4Text}』が良いっていってなかったっけ」`, reset: false },
+        { text: `「あった、あった。確か青年期の選択肢『${q4Text}』が良いって言ってなかったっけ」`, reset: false },
         { text: "「そうそう、あんまり関わりを必要とする人って感じじゃなくてさ」", reset: false },
         { text: "「そんな話をしてたら、みんなで真ん前になってね」", reset: false },
-        { text: "「あの時の心底嫌そうな顔面白かったな~......」", reset: false },
+        { text: "「あの時の心底嫌そうな顔が面白かったな~......」", reset: false },
         { text: "その隣では、別の参列者が思い出話をしていた。", reset: false },
-        { text: "懐かしむよう声に、小さな笑いが混じる。", reset: false }
+        { text: "懐かしむような声に、小さな笑いが混じる。", reset: false }
       ];
       break;
     }
@@ -702,18 +710,45 @@ function getFuneralSequence(ending) {
       memorySteps = [
         { text: `棺桶に入れられた ${q1Text} を見ながら友人たちが口を開く。`, reset: true, action: "clearBg" },
         { text: "「......覚えてる？中学生のころの席替え」", reset: false },
-        { text: "「まあ、おぼえているけど？」", reset: false },
+        { text: "「まあ、覚えているけど？」", reset: false },
         { text: `「この人さ、席替えの日『${q4Text}』が良いって言ってたのに、実際は ${q4SeatResult} になってさ。あの時のフラグ回収早かったな〜...」`, reset: false },
         { text: "「でも、全然落ち込まず逆にすぐ新しい友達作ってたよね。」", reset: false },
         { text: "「そうだった、そうだった。懐かしいね」", reset: false },
         { text: "その隣では、別の参列者が思い出話をしていた。", reset: false },
-        { text: "懐かしむよう声に、小さな笑いが混じる。", reset: false }
+        { text: "懐かしむような声に、小さな笑いが混じる。", reset: false }
       ];
       break;
     }
   }
 
   return memorySteps;
+}
+
+function appendEndingTextWithHighlights(element, text) {
+  const selectedTexts = [...new Set(Object.values(answerHistory).map(record => record && record.text).filter(Boolean))]
+    .sort((a, b) => b.length - a.length);
+  let remaining = String(text);
+  while (remaining.length) {
+    let match = null;
+    let matchIndex = -1;
+    for (const selected of selectedTexts) {
+      const index = remaining.indexOf(selected);
+      if (index !== -1 && (matchIndex === -1 || index < matchIndex)) {
+        match = selected;
+        matchIndex = index;
+      }
+    }
+    if (matchIndex === -1) {
+      element.appendChild(document.createTextNode(remaining));
+      break;
+    }
+    if (matchIndex > 0) element.appendChild(document.createTextNode(remaining.slice(0, matchIndex)));
+    const highlight = document.createElement("span");
+    highlight.className = "selected-choice-highlight";
+    highlight.textContent = match;
+    element.appendChild(highlight);
+    remaining = remaining.slice(matchIndex + match.length);
+  }
 }
 
 function renderChoiceHistory(targetListId = "choice-history-list") {
@@ -769,9 +804,9 @@ function startEndingSequence() {
   $("choice-history-wrap").hidden = false;
 
   const narrationSteps = [
-    { text: "「『あなた』の選択はここで途絶えた」", voice: "voice/transition-01.wav" },
-    { text: "「ここからあなたができることは無い」", voice: "voice/transition-02.wav" },
-    { text: "「どうやらあなたの葬式が、今から行われるようだ」", voice: "voice/transition-03.wav" }
+    { text: "『あなた』の選択はここで途絶えた", voice: "voice/transition-01.wav" },
+    { text: "ここからあなたができることは無い", voice: "voice/transition-02.wav" },
+    { text: "どうやらあなたの葬式が、今から行われるようだ", voice: "voice/transition-03.wav" }
   ];
   let narrationStepIdx = 0;
 
@@ -812,6 +847,7 @@ function startFuneralPhase() {
     stage.className = "ending-stage funeral-bg";
     $("death-god-ending-wrap").hidden = true;
     $("diagnosis-card").hidden = true;
+    $("final-screen").hidden = true;
 
     const container = $("ending-text-container");
     container.innerHTML = "";
@@ -838,10 +874,10 @@ function startFuneralPhase() {
         reset: true
       },
 
-      { text: "「やぁ、おかえり」\n「君が選んで進んだ『あなた』はどうだった？」\n「納得がいくものだった？」", reset: true, action: "whiteBg", showDeathGod: true },
+      { text: "「やぁ、おかえり」\n「君が選んだ『あなた』はどうだったかな？」\n「納得のいくものだっただろうか」", reset: true, action: "whiteBg", showDeathGod: true },
       { text: `「私から見た『あなた』は」\n「${currentEnding.bigFiveAnalysis}」\n「そんな『あなた』は${currentEnding.sins}が相応しい」\n「${currentEnding.deathGodComment}」`, reset: true, showDiagnosis: true },
       { text: "「まぁ、そんなところだ」\n「人生は短い。永遠に感じたとしても、限りがある」\n「今の『あなた』はやり直しが効くもんじゃない。だから、せいぜい楽しめば良い」\n「『あなた』の選択をね」", reset: true, hideDiagnosis: true },
-      { text: "--- 物語はここで完結しました ---\n（再度遊ぶ場合はページを再読み込みしてください）", reset: true, isFinal: true, hideDeathGod: true, showDiagnosis: true }
+      { text: "", reset: true, isFinal: true, hideDeathGod: true, hideDiagnosis: true }
     ];
 
     let currentStep = 0;
@@ -937,14 +973,18 @@ function startFuneralPhase() {
       }
 
       const p = document.createElement("p");
-      p.textContent = stepData.text;
       p.className = "step-line" + (stepData.isLarge ? " large-text" : "");
+      appendEndingTextWithHighlights(p, stepData.text);
       container.appendChild(p);
 
       if (stepData.isFinal) {
         $("ending-next-btn").hidden = true;
+        $("ending-back-btn").hidden = true;
+        $("diagnosis-card").hidden = true;
+        $("final-screen").hidden = false;
       } else {
         $("ending-next-btn").hidden = false;
+        $("final-screen").hidden = true;
       }
     };
 
@@ -955,6 +995,47 @@ function startFuneralPhase() {
 
     $("ending-back-btn").onclick = () => {
       openHistoryModal();
+    };
+
+    $("ending-restart-btn").onclick = () => {
+      restart();
+    };
+
+    const detailModal = $("final-detail-modal");
+    const diagnosisModal = $("final-diagnosis-modal");
+    const diagnosisCard = $("diagnosis-card");
+    const diagnosisCardOriginalParent = diagnosisCard.parentElement;
+    const diagnosisCardOriginalNextSibling = diagnosisCard.nextSibling;
+    const diagnosisSlot = $("diagnosis-modal-card-slot");
+
+    $("final-detail-btn").onclick = () => {
+      detailModal.hidden = false;
+    };
+    $("final-detail-close").onclick = () => {
+      detailModal.hidden = true;
+    };
+    detailModal.onclick = (e) => {
+      if (e.target === detailModal) detailModal.hidden = true;
+    };
+
+    $("final-diagnosis-btn").onclick = () => {
+      updateDiagnosisUI();
+      diagnosisSlot.appendChild(diagnosisCard);
+      diagnosisCard.hidden = false;
+      diagnosisModal.hidden = false;
+    };
+    const closeDiagnosisModal = () => {
+      diagnosisModal.hidden = true;
+      if (diagnosisCardOriginalNextSibling && diagnosisCardOriginalNextSibling.parentElement === diagnosisCardOriginalParent) {
+        diagnosisCardOriginalParent.insertBefore(diagnosisCard, diagnosisCardOriginalNextSibling);
+      } else {
+        diagnosisCardOriginalParent.appendChild(diagnosisCard);
+      }
+      diagnosisCard.hidden = true;
+    };
+    $("final-diagnosis-close").onclick = closeDiagnosisModal;
+    diagnosisModal.onclick = (e) => {
+      if (e.target === diagnosisModal) closeDiagnosisModal();
     };
 
     const modalCloseBtn = $("history-modal-close");
@@ -975,31 +1056,6 @@ function startFuneralPhase() {
   });
 }
 
-function restart() {
-  currentQuestion = 0; O = 0; C = 0; E = 0; A = 0; N = 0; route = null; introIndex = 0; currentEnding = null; introStarted = false;
-  answerHistory = {};
-  document.documentElement.style.setProperty("--darkness", 0);
-  updateProgress();
-  stopNarration();
-  stopBgm();
-  if (bgm2) bgm2.pause();
-  if (bgm3) bgm3.pause();
-  fadeTo(() => {
-    showOnly(intro);
-    intro.classList.add("title-only");
-    if (layout) layout.classList.add("intro-mode");
-    introArtWrap.hidden = true;
-    if (introTitle) {
-      introTitle.textContent = "『あなた』をもう一度";
-      introTitle.hidden = false;
-    }
-    introTitleLine.hidden = true;
-    introLine.hidden = true;
-    startButton.textContent = "スタート";
-    introStarted = false;
-  });
-}
-
 /* --- 全導入ステップの配列定義 --- */
 const introStepsData = [
   // フェーズ1: タイトル後の事前説明（死神非表示）
@@ -1007,28 +1063,15 @@ const introStepsData = [
   { text: "あなたはここに至るまで数えきれない選択をしてきただろう。", voice: "voice/intro-02.mp3", showDeathGod: false },
   { text: "そしてこれからも意図せず、選択を続けていくだろう。死ぬその時まで。", voice: "voice/intro-03.mp3", showDeathGod: false },
   
-  // フェーズ2: 死神登場後のセリフ
-  { text: "これからあなたに自由な人生を与えよう", voice: "voice/intro-04.mp3", showDeathGod: true },
-  { text: "生き方は自由だ。何を思い、何を選ぶのか。今のあなたとして生きてもいい。違う誰かになってもいい", voice: "voice/intro-05.mp3", showDeathGod: true },
-  { text: "その人生を見届け、すべての選択を終えた際には、どんなあなただったか評価してあげよう", voice: "voice/intro-06.mp3", showDeathGod: true },
-  { text: "怖がる必要なんてない。ただの性格診断のようなものさ", voice: "voice/intro-07.mp3", showDeathGod: true },
+  // フェーズ2: 死神登場後のセリフ（暗転フラグ付き）
+  { text: "これからあなたに自由な人生を与えよう", voice: "voice/intro-04.mp3", showDeathGod: true, fadeFirst: true },
+  { text: "生き方は自由だ。何を思い、何を選ぶのか。\n今のあなたとして生きてもいい。違う誰かになってもいい", voice: "voice/intro-05.mp3", showDeathGod: true },
+  { text: "その人生を見届け、すべての選択を終えた際には、\nどんなあなただったか評価してあげよう", voice: "voice/intro-06.mp3", showDeathGod: true },
+  { text: "怖がる必要なんてない。\nただの性格診断のようなものさ", voice: "voice/intro-07.mp3", showDeathGod: true },
   { text: "それでは。良い人生を", voice: "voice/intro-08.mp3", showDeathGod: true }
 ];
 
-// 初期画面セットアップ
-showOnly(intro);
-intro.classList.add("title-only");
-if (layout) layout.classList.add("intro-mode");
-introArtWrap.hidden = true;
-if (introTitle) {
-  introTitle.textContent = "『あなた』をもう一度";
-  introTitle.hidden = false;
-}
-introTitleLine.hidden = true;
-introLine.hidden = true;
-startButton.textContent = "スタート";
-
-startButton.addEventListener("click", () => {
+function handleIntroStep() {
   // スタート押下直後：手動進行開始
   if (!introStarted) {
     introStarted = true;
@@ -1044,24 +1087,37 @@ startButton.addEventListener("click", () => {
   // 導入全ステップの進行
   if (introIndex < introStepsData.length) {
     const step = introStepsData[introIndex];
-    introLine.textContent = step.text;
-    
-    // アニメーションのリセット・適用
-    introLine.style.animation = 'none';
-    introLine.offsetHeight; // リフロー発生
-    introLine.style.animation = 'text-appear 0.6s ease both';
 
-    // 死神画像の表示/非表示制御
-    if (step.showDeathGod) {
-      introArtWrap.hidden = false;
-      if (deathGod) deathGod.hidden = false;
+    const updateStepView = () => {
+      introLine.textContent = step.text;
+      
+      // アニメーションのリセット・適用
+      introLine.style.animation = 'none';
+      introLine.offsetHeight; // リフロー発生
+      introLine.style.animation = 'text-appear 0.6s ease both';
+
+      // 死神画像の表示/非表示制御
+      if (step.showDeathGod) {
+        introArtWrap.hidden = false;
+        if (deathGod) deathGod.hidden = false;
+      } else {
+        introArtWrap.hidden = true;
+        if (deathGod) deathGod.hidden = true;
+      }
+
+      startButton.textContent = "次へ →";
+      playNarration(step.voice);
+    };
+
+    // 死神初登場時にフェード暗転演出を挟む
+    if (step.fadeFirst) {
+      stopNarration();
+      fadeTo(() => {
+        updateStepView();
+      });
     } else {
-      introArtWrap.hidden = true;
-      if (deathGod) deathGod.hidden = true;
+      updateStepView();
     }
-
-    startButton.textContent = "次へ →";
-    playNarration(step.voice);
     return;
   }
 
@@ -1085,7 +1141,7 @@ startButton.addEventListener("click", () => {
 
     // 「診断をはじめる →」クリック時：音声ストップし質問画面（診断）へ移行
     startButton.onclick = () => {
-      stopNarration(); // 確実に音声(intro-09)を停止
+      stopNarration();
       fadeTo(() => {
         showOnly(questionScreen);
         if (layout) layout.classList.remove("intro-mode");
@@ -1095,4 +1151,48 @@ startButton.addEventListener("click", () => {
       });
     };
   });
-});
+}
+
+function restart() {
+  currentQuestion = 0; O = 0; C = 0; E = 0; A = 0; N = 0; route = null; introIndex = 0; currentEnding = null; introStarted = false;
+  answerHistory = {};
+  document.documentElement.style.setProperty("--darkness", 0);
+  updateProgress();
+  stopNarration();
+  stopBgm();
+  if (bgm2) bgm2.pause();
+  if (bgm3) bgm3.pause();
+  if (bgm4) bgm4.pause();
+  fadeTo(() => {
+    showOnly(intro);
+    intro.classList.add("title-only");
+    if (layout) layout.classList.add("intro-mode");
+    introArtWrap.hidden = true;
+    if (deathGod) deathGod.hidden = true;
+    if (introTitle) {
+      introTitle.textContent = "『あなた』をもう一度";
+      introTitle.hidden = false;
+    }
+    introTitleLine.hidden = true;
+    introLine.hidden = true;
+    startButton.textContent = "スタート";
+    startButton.hidden = false;
+    startButton.onclick = handleIntroStep;
+    introStarted = false;
+  });
+}
+
+// 初期画面セットアップ
+showOnly(intro);
+intro.classList.add("title-only");
+if (layout) layout.classList.add("intro-mode");
+introArtWrap.hidden = true;
+if (introTitle) {
+  introTitle.textContent = "『あなた』をもう一度";
+  introTitle.hidden = false;
+}
+introTitleLine.hidden = true;
+introLine.hidden = true;
+startButton.textContent = "スタート";
+
+startButton.onclick = handleIntroStep;
