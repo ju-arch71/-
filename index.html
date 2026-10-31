@@ -5,9 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#080A09">
   <title>『あなた』をもう一度</title>
+  <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(reg => console.log('Service Worker 登録成功:', reg.scope))
+          .catch(err => console.log('Service Worker 登録失敗:', err));
+    });
+  }
+  </script>
   <div class="layout intro-mode">
     <aside class="sidebar">
       <div class="site-title">『あなた』を<br>もう一度</div>
@@ -88,7 +98,16 @@
               </div>
             </div>
 
-            <button id="ending-next-btn" type="button" class="next-step-button">画面をクリックして進む →</button>
+            <div id="final-screen" class="final-screen" hidden>
+              <h1 class="thank-you-title">thank you for playing</h1>
+              <div class="final-screen-buttons">
+                <button id="final-detail-btn" type="button" class="final-menu-button">エンド診断詳細</button>
+                <button id="final-diagnosis-btn" type="button" class="final-menu-button">診断結果</button>
+                <button id="ending-restart-btn" type="button" class="final-menu-button">始めに戻る</button>
+              </div>
+            </div>
+
+            <button id="ending-next-btn" type="button" class="next-step-button ending-fixed-next">クリックして進む →</button>
             <button id="ending-back-btn" type="button" class="back-step-button" hidden>思い出す</button>
           </div>
         </div>
@@ -102,6 +121,62 @@
           <button id="history-modal-close" type="button" class="next-step-button modal-close-btn">閉じる</button>
         </div>
       </div>
+
+      <!-- エンド診断詳細モーダル -->
+      <div id="final-detail-modal" class="info-modal" hidden>
+        <div class="info-modal-content">
+          <h2 class="history-title">【 エンド診断詳細 】</h2>
+          <div class="detail-modal-body">
+            <p><strong>エンド分岐方法：</strong>選択肢ごとに割り振られているBig Fiveの５要素（OCEAN）の最終的な数値より判断</p>
+            <h3>診断詳細：Big Fiveの説明</h3>
+            <section class="trait-detail">
+              <h4>O（解放性）：</h4>
+              <ul>
+                <li><strong>特徴</strong>: 好奇心の強さ、芸術的・知的な関心、新しいことへの挑戦心。</li>
+                <li><strong>高い人</strong>: 創造的で変化を好む。<strong>低い人</strong>: 保守的で慣れ親しんだ手順を好む。</li>
+              </ul>
+            </section>
+            <section class="trait-detail">
+              <h4>C（誠実性）：</h4>
+              <ul>
+                <li><strong>特徴</strong>: 勤勉さ、責任感、計画性、自己管理能力。</li>
+                <li><strong>高い人</strong>: 真面目で約束やルールをきっちり守る。<strong>低い人</strong>: 柔軟で気楽だが、ずぼらになりやすい。</li>
+              </ul>
+            </section>
+            <section class="trait-detail">
+              <h4>E（外交性）：</h4>
+              <ul>
+                <li><strong>特徴</strong>: 社交性、活発さ、積極性、刺激を求める傾向。</li>
+                <li><strong>高い人</strong>: 人といることでエネルギーを得る、明るい。<strong>低い人</strong>（内向的）: 静かな環境を好み、一人の時間を大切にする。</li>
+              </ul>
+            </section>
+            <section class="trait-detail">
+              <h4>A（協調性）：</h4>
+              <ul>
+                <li><strong>特徴</strong>: 思いやり、親切心、他者への信頼や協調的態度。</li>
+                <li><strong>高い人</strong>: 人当たりが良く、他者に合わせる。<strong>低い人</strong>: 競争心が強く、自分の意見を貫く。</li>
+              </ul>
+            </section>
+            <section class="trait-detail">
+              <h4>N（神経症的傾向/情緒不安定性）：</h4>
+              <ul>
+                <li><strong>特徴</strong>: 不安や緊張の感じやすさ、ストレスへの耐性。</li>
+                <li><strong>高い人</strong>: 感受性が豊かだがネガティブな感情を抱きやすい。<strong>低い人</strong>（情緒安定）: 感情が安定しており、動じない。</li>
+              </ul>
+            </section>
+          </div>
+          <button id="final-detail-close" type="button" class="final-menu-button">閉じる</button>
+        </div>
+      </div>
+
+      <!-- 診断結果モーダル -->
+      <div id="final-diagnosis-modal" class="info-modal diagnosis-modal" hidden>
+        <div class="info-modal-content diagnosis-modal-content">
+          <h2 class="history-title">【 診断結果 】</h2>
+          <div id="diagnosis-modal-card-slot"></div>
+          <button id="final-diagnosis-close" type="button" class="final-menu-button">閉じる</button>
+        </div>
+      </div>
     </main>
   </div>
 
@@ -109,6 +184,7 @@
   <audio id="bgm" src="assets/bgm.mp3" loop preload="auto"></audio>
   <audio id="bgm2" src="assets/bgm2.mp3" loop preload="auto"></audio>
   <audio id="bgm3" src="assets/bgm3.mp3" loop preload="auto"></audio>
+  <audio id="bgm4" src="assets/bgm4.mp3" loop preload="auto"></audio>
   <audio id="narration" preload="none"></audio>
   <script src="script.js"></script>
 </body>
